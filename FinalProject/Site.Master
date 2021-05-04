@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="FinalProject.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Timetable Application</title>
+    <script src="../Scripts/DayPilot/modal.js" type="text/javascript"></script>
+    <script src="../Scripts/DayPilot/event_handling.js" type="text/javascript"></script>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+
+<body>
+    <form id="Form1" runat="server">
+        <div id="HeadContent">
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="/">Timetable Application</a>
+                <div class="text-end">
+                    <div runat="server" id="divSignin">
+                        <asp:LinkButton runat="server" id="btnSignin" CssClass="btn btn-outline-light me-2" OnClick="BtnSignin_Click" Text="Sign In"></asp:LinkButton>
+                        <asp:LinkButton runat="server" id="btnSignup" CssClass="btn btn-info me-2" OnClick="BtnSignup_Click" Text="Sign Up"></asp:LinkButton>
+                    </div>
+                    <div runat="server" id="divSignout">
+                        <asp:LinkButton runat="server" id="btnSignout" CssClass="btn btn-info me-2" OnClick="BtnSignout_Click" Text="Sign Out"></asp:LinkButton>
+                    </div>
+                    
+                    
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </form>
+</body>
+</html>
